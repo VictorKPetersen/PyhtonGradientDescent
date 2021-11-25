@@ -1,6 +1,7 @@
 #Victor Kahl Petersen - SOP Machine Learning - 3.D Rybners Teknisk Gymnasium
 if __name__ == '__main__':
-    print("Hello World")
+    print(__name__)
+
 
 
 
