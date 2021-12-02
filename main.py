@@ -3,8 +3,8 @@ from Descent import GradientDescent
 
 
 def main():
-    xValues = [1, 2]
-    yValues = [2, 4]
+    xValues = [0, 1, 2]
+    yValues = [1, 2, 3]
 
     GD1 = GradientDescent(0.0015, 100000, xValues, yValues)
     GD1.gradient_descent_regression()
