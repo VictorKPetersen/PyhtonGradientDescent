@@ -36,8 +36,8 @@ class GradientDescent:
 
             a_current = a_current - self.learning_rate * derivativeA
             b_current = b_current - self.learning_rate * derivativeB
-
-            print(f"a: {a_current}, b: {b_current}, Cost: {cost}, R2: {self.r_squared(y_prediction)}, Iteration: {current_iteration}")
+            r2 = self.r_squared(y_prediction)
+            print(f"a: {a_current}, b: {b_current}, Cost: {cost}, R2: {r2}, Iteration: {current_iteration}")
 
 
             if abs(cost - previous_cost) >= 5e-33:
