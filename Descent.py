@@ -18,8 +18,8 @@ class GradientDescent:
         return r2
 
     def gradient_descent_regression(self):
-        a_current = 11
-        b_current = 109400
+        a_current = 0
+        b_current = 0
         n = len(self.x)
         current_iteration = 0;
         previous_cost = 0;
