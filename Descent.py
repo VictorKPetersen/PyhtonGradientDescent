@@ -6,8 +6,8 @@ class GradientDescent:
     def __init__(self, learning_rate, iterations, x_data, y_data):
         self.learning_rate = learning_rate
         self.iterations = iterations
-        self.x = np.array(x_data)
-        self.y = np.array(y_data)
+        self.x = x_data
+        self.y = y_data
         self.x_average = sum(self.x) / len(self.x)
         self.y_average = sum(self.y) / len(self.y)
 
@@ -18,8 +18,8 @@ class GradientDescent:
         return r2
 
     def gradient_descent_regression(self):
-        a_current = 0
-        b_current = 0
+        a_current = 11
+        b_current = 109400
         n = len(self.x)
         current_iteration = 0;
         previous_cost = 0;

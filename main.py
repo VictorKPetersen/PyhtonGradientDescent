@@ -4,14 +4,13 @@ from csvHandler import CsvHandler
 
 
 def main():
-    xValues = [0, 1, 2]
-    yValues = [1.5, 3, 4.5]
 
-    CSVHandler1 = CsvHandler()
-    CSVHandler1.readCSV()
+    CSVHandler1 = CsvHandler('housePriceDataTest.csv')
+    x_values = CSVHandler1.get_x_from_csv()
+    y_values = CSVHandler1.get_y_from_csv()
 
-    #GD1 = GradientDescent(0.0015, 100000, xValues, yValues)
-    #GD1.gradient_descent_regression()
+    GD1 = GradientDescent(0.00003, 10000000, x_values, y_values)
+    GD1.gradient_descent_regression()
 
 
 
