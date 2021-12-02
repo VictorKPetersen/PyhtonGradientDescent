@@ -8,6 +8,14 @@ class GradientDescent:
         self.iterations = iterations
         self.x = np.array(x_data)
         self.y = np.array(y_data)
+        self.x_average = sum(self.x) / len(self.x)
+        self.y_average = sum(self.y) / len(self.y)
+
+    def r_squared(self, y_prediction):
+        unexplained_varians = sum([val ** 2 for val in (y_prediction - self.y)]);
+        total_varians = sum([val ** 2 for val in (self.y - self.y_average)])
+        r2 = 1 - (unexplained_varians / total_varians)
+        return r2
 
     def gradient_descent_regression(self):
         a_current = 0
@@ -29,9 +37,13 @@ class GradientDescent:
             a_current = a_current - self.learning_rate * derivativeA
             b_current = b_current - self.learning_rate * derivativeB
 
-            print(f"a: {a_current}, b: {b_current}, Cost: {cost}, Iteration: {current_iteration}")
+            print(f"a: {a_current}, b: {b_current}, Cost: {cost}, R2: {self.r_squared(y_prediction)}, Iteration: {current_iteration}")
+
 
             if abs(cost - previous_cost) >= 5e-33:
                 previous_cost = cost
             else:
                 break
+
+
+

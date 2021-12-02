@@ -3,10 +3,12 @@ from Descent import GradientDescent
 
 
 def main():
-    xValues = [0, 4, 7, 9, 15, 17, 21, 25, 31, 34, 36, 31]
-    yValues = [4, 2, 8, 12, 13, 16, 21, 19, 25, 20, 30, 35]
+    xValues = [1, 2, 3]
+    yValues = [2, 1, 4]
+
     GD1 = GradientDescent(0.0015, 100000, xValues, yValues)
     GD1.gradient_descent_regression()
+
 
 
 if __name__ == '__main__':
