@@ -9,7 +9,7 @@ def main():
     x_values = CSVHandler1.get_x_from_csv()
     y_values = CSVHandler1.get_y_from_csv()
 
-    GD1 = GradientDescent(0.00003, 10000000, x_values, y_values)
+    GD1 = GradientDescent(0.025, 10000000, x_values, y_values)
     GD1.gradient_descent_regression()
 
 

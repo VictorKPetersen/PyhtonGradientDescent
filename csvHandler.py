@@ -9,12 +9,12 @@ class CsvHandler:
 
     def get_x_from_csv(self):
         data = pd.read_csv(self.path)
-        data_list = np.array(data['SqM'].values.tolist())
+        data_list = np.array(data['Price'].values.tolist())
         return data_list
 
     def get_y_from_csv(self):
         data = pd.read_csv(self.path)
-        data_list = np.array(data['Price'].values.tolist())
+        data_list = np.array(data['SqM'].values.tolist())
         return data_list
 
 
