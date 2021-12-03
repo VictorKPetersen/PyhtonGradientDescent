@@ -1,9 +1,9 @@
 # Victor Kahl Petersen - SOP Machine Learning - 3.D Rybners Teknisk Gymnasium
 from Descent import GradientDescent
 from csvHandler import CsvHandler
+#Classes being imported
 
-
-
+# Main Method creates objects of classes, and uses methods
 def main():
 
     CSVHandler1 = CsvHandler("housePriceDataTest.csv", "Price", "SqM")
@@ -14,6 +14,6 @@ def main():
     GD1.gradient_descent_regression()
 
 
-
+# If statement that checks if this the file that is run, if so runs main method
 if __name__ == '__main__':
     main()
