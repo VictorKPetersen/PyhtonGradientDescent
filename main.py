@@ -5,7 +5,7 @@ from csvHandler import CsvHandler
 
 def main():
 
-    CSVHandler1 = CsvHandler('housePriceDataTest.csv')
+    CSVHandler1 = CsvHandler("housePriceDataTest.csv", "Price", "SqM")
     x_values = CSVHandler1.get_x_from_csv()
     y_values = CSVHandler1.get_y_from_csv()
 
