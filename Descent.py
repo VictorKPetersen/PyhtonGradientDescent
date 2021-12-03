@@ -1,4 +1,4 @@
-import numpy as np
+from plotter import Plotter
 
 
 class GradientDescent:
@@ -8,12 +8,12 @@ class GradientDescent:
         self.iterations = iterations
         self.x = x_data
         self.y = y_data
-        self.x_average = sum(self.x) / len(self.x)
-        self.y_average = sum(self.y) / len(self.y)
+
 
     def r_squared(self, y_prediction):
+        y_average = sum(self.y) / len(self.y)
         unexplained_varians = sum([val ** 2 for val in (y_prediction - self.y)]);
-        total_varians = sum([val ** 2 for val in (self.y - self.y_average)])
+        total_varians = sum([val ** 2 for val in (self.y - y_average)])
         r2 = 1 - (unexplained_varians / total_varians)
         return r2
 
@@ -39,11 +39,18 @@ class GradientDescent:
             r2 = self.r_squared(y_prediction)
             print(f"a: {a_current}, b: {b_current}, Cost: {cost}, R2: {r2}, Iteration: {current_iteration}")
 
-
             if abs(cost - previous_cost) >= 5e-33:
                 previous_cost = cost
             else:
                 break
+        print(f"The best fitting line i determined as \ny = {a_current}x + {b_current} \n with an R squarred value of {r2}")
+        PlotterD = Plotter(self.x, self.y)
+        PlotterD.plotScatterPoints()
+        PlotterD.plotBestFitLine(a_current, b_current)
+        PlotterD.showPlot()
+
+
+
 
 
 

@@ -3,6 +3,7 @@ from Descent import GradientDescent
 from csvHandler import CsvHandler
 
 
+
 def main():
 
     CSVHandler1 = CsvHandler("housePriceDataTest.csv", "Price", "SqM")
@@ -11,7 +12,6 @@ def main():
 
     GD1 = GradientDescent(0.025, 10000000, x_values, y_values)
     GD1.gradient_descent_regression()
-
 
 
 
